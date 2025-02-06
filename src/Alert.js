@@ -15,7 +15,7 @@ export default function Alert(props) {
         <strong> {capitalize(props.alert.type)}</strong>:{props.alert.msg}
         <button
           type="button"
-          class="btn"
+          className="btn"
           data-bs-dismiss="alert"
           aria-label="Close"
         ></button>

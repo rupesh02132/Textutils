@@ -25,29 +25,28 @@ export default function TextForm(props) {
     setText(newText);
   };
 
-  function handlecopy() {
-    const text = document.querySelector("#myBox");
-    if (text) {
-      text.select();
-      text.setSelectionRange(0, 99999);
+  // function handlecopy() {
+  //   const text = document.querySelector("#myBox");
+  //   if (text) {
+  //     text.select();
+  //     text.setSelectionRange(0, 99999);
 
-      // modern approach to copying text to the clipboard
-      navigator.clipboard
-        .writeText(text.value)
-        .then(() => {
-          console.log("Text copied to clipboard");
-        })
-        .catch((err) => {
-          console.error("Failed to copy text: ", err);
-        });
-    }
-  }
-
-  // const handlecopy=()=>{
-  //   var text =document.querySelector('#myBox');
-  //   text.ariaSelected();
-  //   navigator.clipboard.writeText(text.value);
+  //     // modern approach to copying text to the clipboard
+  //     navigator.clipboard
+  //       .writeText(text.value)
+  //       .then(() => {
+  //         console.log("Text copied to clipboard");
+  //       })
+  //       .catch((err) => {
+  //         console.error("Failed to copy text: ", err);
+  //       });
+  //   }
   // }
+
+  const handlecopy=()=>{
+   
+    navigator.clipboard.writeText(text);
+  }
 
   const handleExtraSpace = () => {
     let newText = text.split(/[ ]+/);
