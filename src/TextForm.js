@@ -23,6 +23,7 @@ export default function TextForm(props) {
     console.log("Clear text clicked");
     let newText = "";
     setText(newText);
+    props.showalert("Text has been cleared", "success");
   };
 
   // function handlecopy() {
@@ -46,11 +47,13 @@ export default function TextForm(props) {
   const handlecopy=()=>{
    
     navigator.clipboard.writeText(text);
+    props.showalert("Copied to clipboard", "success");
   }
 
   const handleExtraSpace = () => {
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    props.showalert("Extra space has been removed", "success");
   };
 
   const [text, setText] = useState("");
